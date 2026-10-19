@@ -1,14 +1,13 @@
-// 在这里填写个人信息和作品。留空的内容会显示为待填写，不会生成虚假经历。
+// 个人资料和作品内容集中在这里。空字符串表示尚待填写。
+// 网站没有预设项目名称：name 留空时，界面仅显示通用的 PORTFOLIO。
 window.PORTFOLIO = {
-  name: "留白", // 修改为你的姓名或工作室名称
-  personName: "",
-  intro: "这里是我的创作空间。\n关于观察、表达，以及尚未被定义的可能。",
-  about: "", aboutDetail: "", practice: "", location: "", email: "",
+  name: "", personName: "", tagline: "", intro: "",
+  about: "", practice: "", location: "", email: "",
   githubUsername: "lshdong05",
   projects: [
-    { title: "", category: "视觉探索", year: "", description: "", url: "", image: "", art: "fold" },
-    { title: "", category: "数字体验", year: "", description: "", url: "", image: "", art: "orbit" },
-    { title: "", category: "创意实验", year: "", description: "", url: "", image: "", art: "type" },
-    { title: "", category: "自由创作", year: "", description: "", url: "", image: "", art: "grid" }
+    { id:"01", title:"", category:"视觉", year:"", role:"", description:"", process:"", url:"", image:"", art:"sculpture" },
+    { id:"02", title:"", category:"数字", year:"", role:"", description:"", process:"", url:"", image:"", art:"blue" },
+    { id:"03", title:"", category:"实验", year:"", role:"", description:"", process:"", url:"", image:"", art:"fold" },
+    { id:"04", title:"", category:"视觉", year:"", role:"", description:"", process:"", url:"", image:"", art:"coral" }
   ]
 };

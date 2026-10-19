@@ -1,43 +1,52 @@
-# 留白 / Personal Portfolio
+# Personal Portfolio
 
-酒红与暖白艺术风格个人作品集。原生 HTML、CSS、JavaScript，无第三方运行时依赖。
+以红白为主、结合钴蓝与暖色辅助色的多页面个人作品集。采用展厅透视、错层画面和独立页面形成视觉与导航上的纵深。
 
-## 填写内容
+## 页面结构
 
-编辑 `dist/content.js` 即可替换姓名、简介、专业方向、城市、邮箱和四个作品的标题、年份、描述、图片及外部链接。空内容显示为“待填写”，现有抽象几何封面是设计示意。
+- `dist/index.html`：首页 / 展厅入口
+- `dist/works.html`：作品目录，可按分类筛选
+- `dist/project.html?id=01`：第三级项目详情，支持返回目录和下一项目
+- `dist/about.html`：个人简介
+- `dist/contact.html`：联系方式与实时 GitHub 公开项目
 
-将作品图片放在 `dist/images/`，例如将 image 设置为 `./images/project-01.jpg`。
+各页面有独立 URL，可以直接打开或分享。无效项目编号有清晰的返回入口。
 
-## GitHub 展示
+## 填写你的内容
 
-`githubUsername` 已设置为 `lshdong05`。页面提供真实 GitHub 主页链接。点击“加载公开项目”会直接通过 GitHub 公开 API 获取最近更新的原创仓库，最多展示 4 个；不会读取私有仓库，也不需要令牌。网络不通或请求额度耗尽时显示错误和重试入口。
+编辑 `dist/content.js`：
+- `name`：项目或个人品牌名。留空时只显示通用的 PORTFOLIO，不预设名字。
+- `personName`、`tagline`、`intro`、`about`、`practice`、`location`、`email`：个人资料。
+- `projects`：作品数组。保留稳定且唯一的字符串 `id`，用于详情页地址。可填写标题、分类、年份、角色、简介、过程、图片与链接。
+- 图片可放在 `dist/assets/`，例如 `image: "./assets/my-work.jpg"`。
 
-## 本地预览
+空内容会显示为“待补充”。当前视觉图像与几何封面为网站设计示意，不代表实际个人项目或经历。
 
-安装 Node.js 18 或更新版本后运行：
+## 本地运行
+
+需要 Node.js 18 或更新版本，无需安装第三方运行时依赖：
 
 ```sh
 npm start
+npm run check
 ```
 
-浏览器打开 http://127.0.0.1:4173。运行 `npm run check` 检查脚本语法。
+在浏览器打开 http://127.0.0.1:4173/ 。
 
-## 源码和发布
+## 发布与源码
 
-源码仓库：https://github.com/lshdong05/portfolio 。网站静态文件全部位于 `dist/`，可部署至任何静态托管服务。Sites 项目配置位于 `.openai/hosting.json`。修改 GitHub 中的源码不会自动触发 Sites 发布，需要另行同步和部署。
+线上网站：https://red-white-atelier-portfolio.navyroot256.chatgpt.site
+源码仓库：https://github.com/lshdong05/portfolio
 
-Sites 网站默认仅所有者可访问；源码仓库可保持私有。公开访问或 GitHub Pages 部署可在确认后单独配置。
+静态网站文件全部位于 `dist/`，可部署到支持静态文件的托管服务。Sites 身份与目录配置位于 `.openai/hosting.json`。GitHub 提交与 Sites 发布是两个独立步骤，当前没有自动发布流水线。
 
-## 浏览器与可访问性
+## GitHub 展示
 
-使用标准 HTML、CSS Grid/Flex 和原生 JavaScript，面向现代 Chrome、Edge、Firefox、Safari。包含手机断点、键盘焦点、跳转导航、原生模态对话框及减少动画设置。GitHub 读取需要网络。具体实测结果请以交付说明为准，不声称已在所有浏览器中测试。
+联系页面的“加载公开项目”会调用 GitHub 公开 API，展示 `githubUsername` 对应账号最近更新的最多四个原创公开仓库。不会读取私有仓库，不需要令牌；网络或请求限额错误会提供明确提示和重试按钮。
 
-## 文件
+## 视觉与可访问性
 
-- `dist/index.html`：页面结构
-- `dist/style.css`：版式、响应式样式与原创抽象图形
-- `dist/content.js`：可填写内容
-- `dist/app.js`：作品详情、GitHub 加载
-- `preview.mjs`：本地静态预览
+主色 #952c3e / #f9f7f2，辅助色 #3855b2 / #e68a72 / #e8bcb9。首页图像由 imagegen 生成，压缩后的 WebP 为本地静态资产，不依赖外链。几何封面由 CSS 绘制。
 
-主色为低饱和酒红 #762638，搭配暖白 #f7f4ef；网站为原创个人作品集，不使用汇丰标志。
+支持响应式布局、键盘焦点、跳转导航、位置导航、标准浏览器前进后退以及减少动画设置。面向现代 Chrome、Edge、Firefox 和 Safari；实际测试范围以交付说明为准。
+
