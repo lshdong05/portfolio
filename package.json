@@ -1,0 +1,8 @@
+{
+  "name": "red-white-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A red and white editorial personal portfolio.",
+  "scripts": { "start": "node preview.mjs", "check": "node --check dist/app.js && node --check dist/content.js" },
+  "engines": { "node": ">=18" }
+}
