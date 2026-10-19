@@ -35,7 +35,8 @@ npm run check
 
 ## 发布与源码
 
-线上网站：https://red-white-atelier-portfolio.navyroot256.chatgpt.site
+线上网站：https://lshdong05.github.io/portfolio/
+Sites 镜像：https://red-white-atelier-portfolio.navyroot256.chatgpt.site
 源码仓库：https://github.com/lshdong05/portfolio
 
 静态网站文件全部位于 `dist/`，可部署到支持静态文件的托管服务。Sites 身份与目录配置位于 `.openai/hosting.json`。GitHub Pages 使用 `.github/workflows/pages.yml` 自动发布 `dist/`。Sites 的发布仍是独立步骤。
@@ -57,6 +58,6 @@ npm run check
 
 首次启用：在仓库 Settings → Pages → Build and deployment → Source 选择 **GitHub Actions**。如果首次运行因尚未启用 Pages 而失败，完成设置后重新运行即可。
 
-成功部署后的默认网址：https://lshdong05.github.io/portfolio/ 。
+GitHub Pages 已启用并成功部署：https://lshdong05.github.io/portfolio/ 。
 
 自有域名绑定不包含域名注册。尚未购买及控制 shdlll.com，因此当前不会配置该域名或加入 CNAME；网站先使用免费的 github.io 地址。
